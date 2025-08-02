@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- normal colors -->
+
+    <color name="black">#000001</color>
+    <color name="white">#FFFFFFFE</color>
+    <color name="brown">#1B1B1B</color>
+    <color name="whitish">#E9E9E9</color>
+    <color name="blachite">#919191</color>
+    <color name="yellow">#EC8404</color>
+    <color name="blue">#2D88F8</color>
+    <color name="green">#5AB53F</color>
+    <color name="red">#F16D45</color>
+    <color name="purple">#4806B3</color>
+
+    <!-- transparent colors -->
+
+    <color name="black_trans">#92060606</color>
+    <color name="trans">#0000</color>
+
+    <!-- foreground colors -->>
+
+    <color name="red_fg">#FCB58E93</color>
+    <color name="blue_fg">#BC92B6</color>
+    <color name="green_fg">#ACC1A3</color>
+    <color name="teal_fg">#A6C3C3</color>
+    <color name="yellow_fg">#BAB39F</color>
+
+    <color name="fg_toggle">#3D868684</color>
+    <color name="fg_toggle_light">#2C868684</color>
+    <color name="fg_toggle_dark">#56848483</color>
+
+    <!-- background colors -->
+
+    <color name="yellow_bg">#181301</color>
+    <color name="blue_bg">#000A16</color>
+    <color name="teal_bg">#001919</color>
+    <color name="green_bg">#041700</color>
+    <color name="red_bg">#220208</color>
+
+</resources>

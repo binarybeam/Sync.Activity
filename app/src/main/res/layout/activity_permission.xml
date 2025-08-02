@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".PermissionActivity">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/request"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/black_trans"
+      android:elevation="100dp"
+      android:visibility="gone"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/noteCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="55dp"
+        app:cardBackgroundColor="@color/brown"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+      <eightbitlab.com.blurview.BlurView
+          android:id="@+id/noteBlur"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+          <ImageView
+              android:id="@+id/noteIcon"
+              android:layout_width="24dp"
+              android:layout_height="24dp"
+              android:layout_marginTop="24dp"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent"
+              app:srcCompat="@drawable/quote"
+              app:tint="@color/blue" />
+
+          <TextView
+              android:id="@+id/headNote"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="24dp"
+              android:layout_marginTop="12dp"
+              android:layout_marginEnd="24dp"
+              android:ellipsize="end"
+              android:fontFamily="@font/poppins_black"
+              android:gravity="center"
+              android:maxLines="1"
+              android:text="Request from 'Oppo'"
+              android:textColor="@color/whitish"
+              android:textSize="16sp"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@id/noteIcon" />
+
+          <TextView
+              android:id="@+id/positiveNoteBtn"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:fontFamily="@font/poppins_medium"
+              android:foreground="?selectableItemBackground"
+              android:gravity="center"
+              android:letterSpacing="0.15"
+              android:paddingTop="12dp"
+              android:paddingBottom="12dp"
+              android:text="CONNECT DEVICE"
+              android:textColor="@color/blue"
+              android:textSize="12sp"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/topDivider" />
+
+          <com.airbnb.lottie.LottieAnimationView
+              android:id="@+id/noteLoader"
+              android:layout_width="18dp"
+              android:layout_height="18dp"
+              android:visibility="gone"
+              app:layout_constraintBottom_toBottomOf="@+id/positiveNoteBtn"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="@+id/positiveNoteBtn"
+              app:lottie_autoPlay="true"
+              app:lottie_colorFilter="@color/blachite"
+              app:lottie_loop="true"
+              app:lottie_rawRes="@raw/loading_yellow" />
+
+          <TextView
+              android:id="@+id/negativeNoteBtn"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:fontFamily="@font/poppins_medium"
+              android:foreground="?selectableItemBackground"
+              android:gravity="center"
+              android:letterSpacing="0.15"
+              android:paddingTop="12dp"
+              android:paddingBottom="12dp"
+              android:text="REJECT"
+              android:textColor="@color/blachite"
+              android:textSize="12sp"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/positiveNoteBtn" />
+
+          <View
+              android:id="@+id/midDivider"
+              android:layout_width="0dp"
+              android:layout_height="1dp"
+              android:background="@color/fg_toggle_light"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/topDivider" />
+
+          <View
+              android:id="@+id/topDivider"
+              android:layout_width="match_parent"
+              android:layout_height="1dp"
+              android:layout_marginTop="24dp"
+              android:background="@color/fg_toggle"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/bioNote" />
+
+          <TextView
+              android:id="@+id/bioNote"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="24dp"
+              android:layout_marginTop="6dp"
+              android:layout_marginEnd="24dp"
+              android:ellipsize="end"
+              android:fontFamily="@font/poppins"
+              android:gravity="center"
+              android:maxLines="8"
+              android:text="Check your mailbox, Click on the verification link sent by us to able verify email and be able to use the app."
+              android:textColor="@color/blachite"
+              android:textSize="11sp"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/headNote" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+      </eightbitlab.com.blurview.BlurView>
+    </androidx.cardview.widget.CardView>
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <eightbitlab.com.blurview.BlurView
+      android:id="@+id/useBlur"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/black_trans"
+      android:elevation="10dp"
+      android:visibility="gone"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <ScrollView
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:scrollbars="none"
+          app:layout_constraintBottom_toTopOf="@id/divider4"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/how_to_use"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:paddingStart="32dp"
+            android:paddingTop="80dp"
+            android:paddingEnd="32dp"
+            android:paddingBottom="80dp"
+            android:text="The purpose of this app is to sync notifications among multiples device\n\nNote : One phone can be used to receive notifications from up to 100 devices. but 1 device can send notifications to just 1 phone, if you link it to two devices the first one will be unlinked automatically.\n\n\nHow to use :-\n\nThis app generates a unique I'd for every device which is called 'access id'. To sync a device, you have to get access I'd of sender device (the device which will share notifications) by tapping on the below button labeled as 'GET/GENERATE ACCESS ID' on this page...\nNow you have to type/paste this I'd in input filed on same page in receiver phone (the phone which will receive notifications). On tapping the arrow button you will see a confirmation text with device name and status, On tapping again the same arrow button a notification or prompt will be sent to sender's device. Once the sender device approves receiver's phone will start receiving notifications from sender's device."
+            android:textColor="#BABFBB"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+      </ScrollView>
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:id="@+id/constraintLayout2"
+          android:layout_width="match_parent"
+          android:layout_height="100dp"
+          android:background="@drawable/gradient"
+          app:layout_constraintBottom_toTopOf="@id/divider4"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent">
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:id="@+id/constraintLayout"
+          android:layout_width="match_parent"
+          android:layout_height="100dp"
+          android:background="@drawable/gradient"
+          android:rotation="180"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent">
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+      <View
+          android:id="@+id/divider4"
+          android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@color/brown"
+          app:layout_constraintBottom_toTopOf="@+id/understood"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent" />
+
+      <TextView
+          android:id="@+id/understood"
+          android:layout_width="0dp"
+          android:layout_height="65dp"
+          android:fontFamily="@font/poppins"
+          android:foreground="?selectableItemBackground"
+          android:gravity="center"
+          android:letterSpacing="0.1"
+          android:text="UNDERSTOOD"
+          android:textColor="@color/blue"
+          android:textSize="13sp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          tools:ignore="HardcodedText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </eightbitlab.com.blurview.BlurView>
+
+  <eightbitlab.com.blurview.BlurView
+      android:id="@+id/pointBlur"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/black_trans"
+      android:elevation="10dp"
+      android:visibility="gone"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <TextView
+          android:id="@+id/textView25"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="8dp"
+          android:layout_marginEnd="8dp"
+          android:fontFamily="@font/poppins_bold"
+          android:gravity="center"
+          android:text="Get +50 Points"
+          android:textColor="@color/whitish"
+          android:textSize="24sp"
+          app:layout_constraintBottom_toTopOf="@+id/textView27"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintVertical_chainStyle="packed" />
+
+      <TextView
+          android:id="@+id/textView27"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="50dp"
+          android:layout_marginTop="8dp"
+          android:layout_marginEnd="50dp"
+          android:fontFamily="@font/poppins"
+          android:gravity="center"
+          android:text="Watching a short will add 50 points in you wallet. You can do this unlimited times."
+          android:textColor="@color/blachite"
+          android:textSize="12sp"
+          app:layout_constraintBottom_toTopOf="@+id/getPoints"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+      <androidx.cardview.widget.CardView
+          android:id="@+id/getPoints"
+          android:layout_width="wrap_content"
+          android:layout_height="40dp"
+          android:layout_marginTop="24dp"
+          android:foreground="?selectableItemBackground"
+          android:minWidth="45dp"
+          app:cardBackgroundColor="@color/blue"
+          app:cardCornerRadius="40dp"
+          app:cardElevation="0dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/textView27">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/anim10"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:lottie_autoPlay="true"
+            app:lottie_colorFilter="@color/black"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading_yellow" />
+
+        <TextView
+            android:id="@+id/textView100"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins"
+            android:letterSpacing="0.1"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="GET 50 POINTS"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            tools:ignore="HardcodedText" />
+      </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </eightbitlab.com.blurview.BlurView>
+
+  <eightbitlab.com.blurview.BlurView
+      android:id="@+id/blurView"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/black_trans"
+      android:elevation="1dp"
+      android:visibility="gone"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <TextView
+          android:id="@+id/textView20"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="32dp"
+          android:layout_marginTop="3dp"
+          android:layout_marginEnd="32dp"
+          android:fontFamily="@font/poppins"
+          android:text="Share this with your partner"
+          android:textColor="@color/blachite"
+          android:textSize="12sp"
+          android:visibility="gone"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+      <ImageView
+          android:id="@+id/imageView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="-12dp"
+          android:rotation="180"
+          android:visibility="gone"
+          app:layout_constraintEnd_toEndOf="@+id/cardView5"
+          app:layout_constraintStart_toStartOf="@+id/cardView5"
+          app:layout_constraintTop_toBottomOf="@+id/cardView5"
+          app:srcCompat="@drawable/ic_baseline_eject_24"
+          app:tint="@color/brown" />
+
+      <androidx.cardview.widget.CardView
+          android:id="@+id/cardView5"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="8dp"
+          android:visibility="gone"
+          app:cardBackgroundColor="@color/brown"
+          app:cardCornerRadius="20dp"
+          app:cardElevation="0dp"
+          app:layout_constraintBottom_toTopOf="@+id/cardView4"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.1"
+            android:paddingStart="12dp"
+            android:paddingTop="3dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="2dp"
+            android:text="COPIED"
+            android:textColor="@color/blachite"
+            android:textSize="11sp" />
+      </androidx.cardview.widget.CardView>
+
+      <androidx.cardview.widget.CardView
+          android:id="@+id/cardView4"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="24dp"
+          android:layout_marginEnd="24dp"
+          app:cardBackgroundColor="@color/trans"
+          app:cardCornerRadius="10dp"
+          app:cardElevation="0dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/accessId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_light"
+            android:fontFamily="@font/poppins_bold"
+            android:letterSpacing="0.1"
+            android:paddingStart="16dp"
+            android:paddingTop="9dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp"
+            android:text="CHSH223924JDJDK"
+            android:textColor="@color/white"
+            android:textSize="19sp" />
+      </androidx.cardview.widget.CardView>
+
+      <TextView
+          android:id="@+id/textView22"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="2dp"
+          android:fontFamily="@font/poppins"
+          android:letterSpacing="0.1"
+          android:text="TAP TO COPY"
+          android:textColor="@color/blachite"
+          android:textSize="11sp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/cardView4" />
+
+      <TextView
+          android:id="@+id/textView21"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="16dp"
+          android:fontFamily="@font/poppins_medium"
+          android:text="Your Access ID"
+          android:textColor="@color/whitish"
+          android:textSize="14sp"
+          android:visibility="gone"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </eightbitlab.com.blurview.BlurView>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/navBar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:cardBackgroundColor="@color/fg_toggle"
+        app:cardCornerRadius="50dp"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+      <ImageView
+          android:id="@+id/imageView4"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          tools:srcCompat="@tools:sample/avatars" />
+    </androidx.cardview.widget.CardView>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/device"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:background="@color/black"
+      android:visibility="gone"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/navBar"
+      app:layout_constraintVertical_bias="1.0">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_black"
+        android:text="Connect a phone"
+        android:textColor="@color/whitish"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/fg_toggle_light"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:padding="16dp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+        <TextView
+            android:id="@+id/deviceName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.1"
+            android:text="xiaomi Redmi Y3"
+            android:textAllCaps="true"
+            android:textColor="@color/green"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Registered at  :  "
+            android:textColor="@color/blachite"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/deviceName"
+            app:layout_constraintTop_toBottomOf="@+id/deviceName" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Status  :  "
+            android:textColor="@color/blachite"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/deviceName"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="12 January 2023"
+            android:textColor="#D2D0D0"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/textView3"
+            app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="Not connected"
+            android:textColor="#D2D0D0"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/textView11"
+            app:layout_constraintTop_toTopOf="@+id/textView11" />
+
+        <TextView
+            android:id="@+id/connectedTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text=" (Oppo)"
+            android:textColor="#AEAFAE"
+            android:textSize="12sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/status"
+            app:layout_constraintTop_toTopOf="@+id/textView11" />
+      </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins"
+        android:gravity="center|start"
+        android:text="Enter the access I'd of other device to link notifications of both phones."
+        android:textColor="@color/blachite"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/trans"
+        app:cardCornerRadius="40dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/idGGenerator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+      <TextView
+          android:id="@+id/useBtn"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:background="@drawable/ripple"
+          android:fontFamily="@font/poppins"
+          android:letterSpacing="0.1"
+          android:paddingStart="16dp"
+          android:paddingTop="6dp"
+          android:paddingEnd="16dp"
+          android:paddingBottom="5dp"
+          android:text="How to use the app ?"
+          android:textColor="@color/blachite"
+          android:textSize="12sp" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/idGGenerator"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:background="@drawable/ripple"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:letterSpacing="0.1"
+        android:text="GET ACCESS ID"
+        android:textColor="@color/blue"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/idGenLoader"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/idGGenerator"
+        app:layout_constraintEnd_toEndOf="@+id/idGGenerator"
+        app:layout_constraintStart_toStartOf="@+id/idGGenerator"
+        app:layout_constraintTop_toTopOf="@id/idGGenerator"
+        app:lottie_autoPlay="true"
+        app:lottie_colorFilter="@color/blachite"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loading_yellow"
+        app:lottie_speed="2" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/brown"
+        app:layout_constraintBottom_toTopOf="@+id/idGGenerator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/submitCard"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="20dp"
+        android:foreground="?selectableItemBackground"
+        app:cardBackgroundColor="@color/fg_toggle_dark"
+        app:cardCornerRadius="40dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cardView">
+
+      <TextView
+          android:id="@+id/submitArrow"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:layout_marginTop="1dp"
+          android:fontFamily="@font/poppins"
+          android:text="➜"
+          android:textColor="@color/black"
+          android:textSize="15sp"
+          app:layout_constraintStart_toStartOf="@+id/textView4"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <TextView
+          android:id="@+id/finalSubmit"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_gravity="center"
+          android:background="@color/green"
+          android:fontFamily="@font/poppins"
+          android:foreground="?selectableItemBackground"
+          android:gravity="center"
+          android:text="✔"
+          android:textColor="@color/black"
+          android:textSize="13sp"
+          android:visibility="gone"
+          app:layout_constraintStart_toStartOf="@+id/textView4"
+          app:layout_constraintTop_toTopOf="parent"
+          tools:ignore="TextContrastCheck" />
+
+      <com.airbnb.lottie.LottieAnimationView
+          android:id="@+id/submitLoader"
+          android:layout_width="16dp"
+          android:layout_height="16dp"
+          android:layout_gravity="center"
+          android:visibility="gone"
+          app:lottie_autoPlay="true"
+          app:lottie_colorFilter="@color/black"
+          app:lottie_loop="true"
+          app:lottie_rawRes="@raw/loading_yellow"
+          app:lottie_speed="2" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:foreground="@drawable/outline_btn"
+        app:cardBackgroundColor="@color/trans"
+        app:cardCornerRadius="40dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toStartOf="@+id/submitCard"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14">
+
+      <EditText
+          android:id="@+id/accessIdInput"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="@color/trans"
+          android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+          android:ems="10"
+          android:fontFamily="@font/poppins_medium"
+          android:hint="PASTE HERE"
+          android:inputType="textNoSuggestions"
+          android:letterSpacing="0.1"
+          android:paddingStart="24dp"
+          android:paddingEnd="24dp"
+          android:textColor="@color/whitish"
+          android:textColorHint="#616161"
+          android:textSize="12sp"
+          tools:ignore="TouchTargetSizeCheck" />
+    </androidx.cardview.widget.CardView>
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
