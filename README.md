@@ -77,13 +77,11 @@ The app is built in **Kotlin** and follows modern Android development practices.
 ## Building the APK
 
 ### Debug APK
-
 ```bash
 ./gradlew assembleDebug
 ```
 
 APK will be located in:
-
 ```
 app/build/outputs/apk/debug/app-debug.apk
 ```
@@ -91,17 +89,14 @@ app/build/outputs/apk/debug/app-debug.apk
 ### Release APK (signed)
 
 1. Generate a Keystore (if you don’t already have one):
-
    ```bash
    keytool -genkey -v -keystore release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias release-key
    ```
 2. Build the release APK:
-
    ```bash
    ./gradlew assembleRelease
    ```
 3. The signed APK will be in:
-
    ```
    app/build/outputs/apk/release/app-release.apk
    ```
