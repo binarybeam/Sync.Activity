@@ -1,7 +1,5 @@
 # Notification Sync App for Android
 
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
-
 ## Overview
 
 Notification Sync is an Android application that captures notifications from your device and synchronizes them across multiple devices or services. It is designed for users who want to mirror notifications in real-time, ensuring no alert is missed.
